@@ -1,0 +1,193 @@
+// You create this after creating a run launch config as the 
+// run launch config creation autocreates the .vscode floder that
+// the workspace.code-workspace file needs to be saved in.
+// However from what I read it's actually a multi-root folder 
+// workspace.code-workspace file as it's only created really 
+// for multi-roots as single root single folder projects 
+// get their settings per workspace stored as a settings.json 
+// file in the .vscode sub-folder. FG 3-2021.
+//
+// Multi-root workspaces always have git roots at every root and 
+// settings, tasks, and launch set in the workspace.code-workspace file.
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+    // vscode settings detailed here https://code.visualstudio.com/docs/getstarted/settings
+    // dartcode plugin settings detailed here https://dartcode.org/docs/settings/#dartadditionalanalyzerfileextensions
+	"settings": {
+
+        "zenMode.fullScreen": true,
+        "workbench.editor.showTabs": false,
+        "editor.minimap.enabled": false,
+        "editor.codeLens": false,
+        "workbench.activityBar.visible": true,
+       "editor.renderWhitespace": "all",
+       "editor.fontSize": 18,
+      "editor.lineHeight": 30,
+      "editor.letterSpacing": 0,
+     "editor.fontFamily": "Fira Code",
+     "editor.suggestFontSize": 16,
+     "editor.suggestLineHeight": 28,
+     "terminal.integrated.fontSize": 18,
+     "terminal.integrated.lineHeight": 1.5,
+     "terminal.integrated.cursorBlinking": false,
+     "terminal.integrated.cursorStyle": "line",
+     "editor.emptySelectionClipboard": false,
+      "editor.quickSuggestionsDelay": 0,
+      "editor.formatOnPaste": true,
+      "diffEditor.ignoreTrimWhitespace": false,
+      "dart.devToolsReuseWindows": true,
+      "dart.enableSnippets": true,
+      "dart.devToolsBrowser": "default",
+      "dart.promptToGetPackages": true,
+      "dart.showMainCodeLens": true,
+      "dart.showTestCodeLens": true,
+      "dart.analysisServerFolding": true,
+      "dart.autoImportCompletions": true,
+      "dart.devToolsTheme": "light",
+      "dart.embedDevTools": true,
+      "dart.showDartPadSampleCodeLens": true,
+      "dart.showDartDeveloperLogs": true,
+      "dart.showDevToolsDebugToolBarButtons": true,
+      "dart.lineLength": 80,
+      "dart.flutterScreenshotPath":"./screenshots",
+     
+      // Causes the debug view to automatically appear when a breakpoint is hit. This
+	// setting is global and not configurable per-language.
+	"debug.openDebug": "openOnDebugBreak",
+
+	"[dart]": {
+		// Automatically format code on save and during typing of certain characters
+		// (like `;` and `}`).
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+
+		// Draw a guide line at 80 characters, where Dart's formatting will wrap code.
+		"editor.rulers": [80],
+
+		// Disables built-in highlighting of words that match your selection. Without
+		// this, all instances of the selected text will be highlighted, interfering
+		// with Dart's ability to highlight only exact references to the selected variable.
+		"editor.selectionHighlight": false,
+
+		// By default, VS Code prevents code completion from popping open when in
+		// "snippet mode" (editing placeholders in inserted code). Setting this option
+		// to `false` stops that and allows completion to open as normal, as if you
+		// weren't in a snippet placeholder.
+		"editor.suggest.snippetsPreventQuickSuggestions": false,
+
+		// By default, VS Code will pre-select the most recently used item from code
+		// completion. This is usually not the most relevant item.
+		//
+		// "first" will always select top item
+		// "recentlyUsedByPrefix" will filter the recently used items based on the
+		//     text immediately preceding where completion was invoked.
+		"editor.suggestSelection": "first",
+
+		// Allows pressing <TAB> to complete snippets such as `for` even when the
+		// completion list is not visible.
+		"editor.tabCompletion": "onlySnippets",
+
+		// By default, VS Code will populate code completion with words found in the
+		// current file when a language service does not provide its own completions.
+		// This results in code completion suggesting words when editing comments and
+		// strings. This setting will prevent that.
+		"editor.wordBasedSuggestions": false,
+	}
+
+
+
+    },
+    // list of extensions for memory slim operations as it slims down things to
+		// 800mb to 1.6 gig which than only get's to 6gig on cheap laptops with 
+		// the mobile os emulator, nice!
+
+
+		
+	"extensions": {
+		"recommendations": [
+      "bierner.emojisense",
+      "makotohamanaka.adb-filesystem",
+      "adelphes.android-dev-ext",
+      "vknabel.vscode-apple-swift-format",
+      "formulahendry.auto-close-tag",
+      "mcright.auto-save",
+      "slevesque.vscode-autohotkey",
+      "hookyqr.beautify",
+      "aaron-bond.better-comments",
+      "notzaki.vscode-bookdown",
+      "alefragnani.bookmarks",
+      "coenraads.bracket-pair-colorizer",
+      "streetsidesoftware.code-spell-checker",
+      "codestream.codestream",
+      "naumovs.color-highlight",
+      "equinusocio.vsc-community-material-theme",
+      "dart-code.dart-code",
+      "oscarcs.dart-syntax-highlighting-only",
+      "deerawan.vscode-dash",
+      "editorconfig.editorconfig",
+      "adamvoss.vscode-languagetool-en",
+      "usernamehw.errorlens",
+      "dart-code.flutter",
+      "circlecodesolution.ccs-flutter-color",
+      "rexthedev.flutter-insider",
+      "localizely.flutter-intl",
+      "abehrad.genymotion",
+      "vsls-contrib.gistfs",
+      "donjayamanne.githistory",
+      "felipecaputo.git-project-manager",
+      "knisterpeter.vscode-github",
+      "github.codespaces",
+      "jyee721.gitlab-snippets",
+      "gitlab.gitlab-workflow",
+      "eamodio.gitlens-insiders",
+      "jheilingbrunner.vscode-gnupg-tool",
+      "kumar-harsh.graphql-for-vscode",
+      "kisstkondoros.vscode-gutter-preview",
+      "gurayyarar.imagesprites",
+      "k--kato.intellij-idea-keybindings",
+      "hirantha.json-to-dart",
+      "mkloubert.vscode-kanban",
+      "adamvoss.vscode-languagetool",
+      "yzhang.markdown-all-in-one",
+      "bierner.markdown-checkbox",
+      "bierner.markdown-emoji",
+      "hancel.markdown-image",
+      "kortina.vscode-markdown-notes",
+      "yzane.markdown-pdf",
+      "myml.vscode-markdown-plantuml-preview",
+      "shd101wyy.markdown-preview-enhanced",
+      "darkriszty.markdown-table-prettify",
+      "pkief.material-icon-theme",
+      "equinusocio.vsc-material-theme",
+      "equinusocio.vsc-material-theme-icons",
+      "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+      "canadaduane.notes",
+      "dionmunk.vscode-notes",
+      "spacek33z.vscode-open-in-gitfork",
+      "jebbs.plantuml",
+      "kruemelkatze.vscode-dashboard",
+      "jeroen-meijer.pubspec-assist",
+      "everettjf.pubspec-dependency-search",
+      "bigmogician.puzzle-vscode",
+      "ms-vscode-remote.remote-wsl",
+      "formulahendry.terminal",
+      "yasht.terminal-all-in-one",
+      "thepieterdc.thesaurus-vscode",
+      "wayou.vscode-todo-highlight",
+      "gruntfuggly.todo-tree",
+      "pflannery.vscode-versionlens",
+      "alexdima.vscode-lcov",
+      "deerawan.vscode-faker",
+      "vscode-icons-team.vscode-icons",
+      "seripap.vscode-memory",
+      "tomoki1207.pdf",
+      "zxh404.vscode-proto3",
+      "redhat.vscode-yaml",
+      
+    ]
+	}
+}
