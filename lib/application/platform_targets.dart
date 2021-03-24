@@ -9,15 +9,18 @@ import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:logging/logging.dart';
 
 final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
 Map<String, dynamic> deviceData = <String, dynamic>{};
+
+final Logger myPlatformTargetsLogger = Logger('myPlatformTargetsLogger');
 
 bool get isOnWeb {
   // ignore: unused_local_variable
   bool _isWeb;
 
-  //myPlatformTargetsLogger.info("isOnWeb: $kIsWeb");
+  myPlatformTargetsLogger.info("isOnWeb: $kIsWeb");
 
   return kIsWeb ? (_isWeb = true) : (_isWeb = false);
 }
@@ -26,7 +29,7 @@ bool get isOnAndroid {
   // ignore: unused_local_variable
   bool _isAndroid;
 
-  //myPlatformTargetsLogger.info("isOnAndroid:$Platform.isAndroid");
+  myPlatformTargetsLogger.info("isOnAndroid:$Platform.isAndroid");
 
   return Platform.isAndroid ? (_isAndroid = true) : (_isAndroid = false);
 }
@@ -35,7 +38,7 @@ bool get isOnIOS {
   // ignore: unused_local_variable
   bool _isIOS;
 
- // myPlatformTargetsLogger.info("isOnIOS: $Platform.isIOS");
+  myPlatformTargetsLogger.info("isOnIOS: $Platform.isIOS");
 
   return Platform.isIOS ? (_isIOS = true) : (_isIOS = false);
 }

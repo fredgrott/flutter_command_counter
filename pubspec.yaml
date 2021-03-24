@@ -37,6 +37,8 @@ dependencies:
   get_it: ^6.0.0
   integration_test: ^1.0.2+2
   logging_appenders: ^1.0.0
+  ansicolor: ^1.1.1
+
 
 
 

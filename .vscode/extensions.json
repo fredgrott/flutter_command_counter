@@ -78,6 +78,8 @@
     "tomoki1207.pdf",
     "zxh404.vscode-proto3",
     "redhat.vscode-yaml",
-    "exceedsystem.vscode-macros"
+    "exceedsystem.vscode-macros",
+    "valentjn.vscode-ltex",
+    "davidlday.languagetool-linter"
   ]
 }

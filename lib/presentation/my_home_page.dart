@@ -1,9 +1,14 @@
 // Copyright(c) 2021 Fredrick Allan Grott. All rights reserved.
 // Use of this source code is governed by a BSD-style license.
 
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_command/flutter_command.dart';
+import 'package:logging/logging.dart';
+
+final Logger myHomePageLogger = Logger('myHomePageLogger');
 
 
 class MyHomePage extends StatefulWidget {
@@ -52,45 +57,35 @@ class _MyHomePageState extends State<MyHomePage> {
         // null workaround via testing
         title: Text(widget.title ?? ""),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            ValueListenableBuilder<String>(
-                valueListenable: _incrementCounterCommand,
-                builder: (context, val, _) {
-                  return Text(
-                    val,
-                    style: Theme.of(context).textTheme.headline4,
-                  );
-                }),
+      // ignore: prefer_const_literals_to_create_immutables
+      body: Column(children: <Widget>[
+        const Positioned(
+          top: 100,
+          left: 100,
+          child: Text('You have pushed this many times')),
+          Align(
+                    alignment: Alignment.topCenter,
+                    child: ValueListenableBuilder<String>(
+                               valueListenable: _incrementCounterCommand,
+                               builder: (context, val, _) {
+                                         return Text(
+                                           val,
+                                          style: Theme.of(context).textTheme.headline4,
+                                        );
+                               }),
+                  ),
+          
+          
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounterCommand,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+          
+          
+          ),
+          
+
+      
+      
+      
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
